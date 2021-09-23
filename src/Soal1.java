@@ -2,22 +2,36 @@ import java.util.Scanner;
 
 public class Soal1 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
 		
-		for (int i = 0; i < t; i++) {
-			try {
-				long x=sc.nextLong();
-				System.out.println(x + "can be fitted in: ");
-				if (x >= -128 && x <= 127) System.out.println("*byte");
-				if (x >= -32768 && x <= 32727) System.out.println("*short");
-				if (x >= -2147483648 && x <= 2147483647) System.out.println("*int");
-				if (x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1) System.out.println("*long");
+		//var to hold number of test cases
+		//int t;
+		long n = 0;
+		//var to hold input
+		try {
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter number: ");
+			n = sc.nextLong();
+			
+			System.out.println(n + " can be fitted in: " );
+			
+			if (n >= Byte.MIN_VALUE && n <= Byte.MAX_VALUE) {
+				System.out.println("*byte");
+//				datatype = "byte";
 			}
-			catch(Exception e) {
-				System.out.println(sc.next()+"can't be fitted anywhere");
-				sc.close();
+			if (n >= Short.MIN_VALUE && n <= Short.MAX_VALUE) {
+				System.out.println("*short");
 			}
+			if (n >= Integer.MIN_VALUE && n <= Integer.MAX_VALUE) {
+				System.out.println("*int");
+			}
+			if (n >= Long.MIN_VALUE && n <= Long.MAX_VALUE) {
+				System.out.println("*long");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			String[] value = e.getMessage().split(":");
+			System.out.println(value[1] + " can't be fitted anywhere");
 		}
 	}
 }
