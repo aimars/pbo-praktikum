@@ -29,9 +29,10 @@ public class Soal1 {
 				System.out.println("*long");
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			String[] value = e.getMessage().split(":");
-			System.out.println(value[1] + " can't be fitted anywhere");
+			System.out.println("can't be fitted anywhere");
+			//System.out.println(e.getMessage());
+			//String[] value = e.getMessage().split(":");
+			//System.out.println(value[1] + " can't be fitted anywhere");
 		}
 	}
 }
